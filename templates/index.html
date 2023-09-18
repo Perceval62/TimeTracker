@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Timesheet Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Timesheet Tracker</h1>
+
+            <h2 class="subtitle">Active Tasks</h2>
+            <div class="box">
+                {% if active_tasks %}
+                <ul>
+                    {% for task in active_tasks %}
+                    <li>
+                        Task: {{ task.task }} - Running
+                        <form action="/stop/{{ loop.index0 }}" method="POST">
+                            <button class="button is-danger is-small" type="submit">Stop</button>
+                        </form>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No tasks are currently running.</p>
+                {% endif %}
+            </div>
+
+            <h2 class="subtitle">Start Task</h2>
+            <form action="/start" method="POST">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" name="task" placeholder="Enter task name" required>
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Start</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="box">
+                {% if timesheet_entries %}
+                <ul>
+                    {% for task in timesheet_entries %}
+                    <li>
+                        Task: {{ task.task }} - ended {{ task.end_time }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No tasks were stopped.</p>
+                {% endif %}
+            </div>
+
+            <h2 class="subtitle">Export Data</h2>
+            <form action="/exportcsv" method="GET">
+                <button class="button is-success" type="submit">Export CSV</button>
+            </form>
+
+            <!-- Timesheet Entries Display -->
+            <!-- Modify this section to display the timesheet entries using Bulma classes -->
+
+        </div>
+    </section>
+</body>
+
+</html>
