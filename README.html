@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8"/>
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"  />
+<link rel="stylesheet" type="text/css" media="all" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/github.min.css"  /><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'><style> body { box-sizing: border-box; max-width: 740px; width: 100%; margin: 40px auto; padding: 0 10px; } </style><script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script><script src='https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js'></script><script>document.addEventListener('DOMContentLoaded', () => { document.body.classList.add('markdown-body'); document.querySelectorAll('pre[lang] > code').forEach((code) => { code.classList.add(code.parentElement.lang); }); document.querySelectorAll('pre > code').forEach((code) => { hljs.highlightBlock(code); }); });</script>
+</head>
+
+<body>
+
+<h1 id="simple-web-based-time-tracker">Simple web based Time Tracker</h1>
+<p>No auth, no sessions, just a simple time tracker.</p>
+<p>Exports to CSV as you wish.</p>
+<p>Warning: there is no persistence as of yet, everything will be lost upon rebooting the program.</p>
+<p>I got frustrated with tracking what I did for my timesheets.</p>
+<h2 id="how-to-run">How to run</h2>
+<p>Requires Python3, install flask with</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">python3</span> -m pip install flask</span></code></pre></div>
+<p>run with: ~~~ git clone https://github.com/Perceval62/TimeTracker python3 app.py ~~~</p>
+<p>and then browse to</p>
+<pre><code>localhost:5000</code></pre>
+<h2 id="how-to-use">How to use</h2>
+<ol type="1">
+<li>Write something in the text prompt</li>
+<li>Click start</li>
+<li>Repeat if you are a superhuman able to <strong>really</strong> multitask.</li>
+<li>Stop the tasks you started when you are done.</li>
+<li>Click Export to CSV when ready.</li>
+</ol>
+<figure>
+<img src="./screencap.png" alt="" /><figcaption>Image of the software running in a web browser</figcaption>
+</figure>
+
+</body>
+</html>
